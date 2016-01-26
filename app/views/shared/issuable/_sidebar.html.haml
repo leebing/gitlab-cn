@@ -3,26 +3,26 @@
     .block.assignee
       .title
         %label
-          Assignee
+          指派
         - if can?(current_user, :"admin_#{issuable.to_ability_name}", @project)
           .pull-right
-            = link_to 'Edit', '#', class: 'edit-link'
+            = link_to '编辑', '#', class: 'edit-link'
       .value
         - if issuable.assignee
           %strong= link_to_member(@project, issuable.assignee, size: 24)
         - else
-          .light None
+          .light 无
 
       .selectbox
-        = users_select_tag("#{issuable.class.table_name.singularize}[assignee_id]", placeholder: 'Select assignee', class: 'custom-form-control js-select2 js-assignee', selected: issuable.assignee_id, project: @target_project, null_user: true, current_user: true, first_user: true)
+        = users_select_tag("#{issuable.class.table_name.singularize}[assignee_id]", placeholder: '选择指派', class: 'custom-form-control js-select2 js-assignee', selected: issuable.assignee_id, project: @target_project, null_user: true, current_user: true, first_user: true)
 
     .block.milestone
       .title
         %label
-          Milestone
+          里程碑
         - if can?(current_user, :"admin_#{issuable.to_ability_name}", @project)
           .pull-right
-            = link_to 'Edit', '#', class: 'edit-link'
+            = link_to '编辑', '#', class: 'edit-link'
       .value
         - if issuable.milestone
           %span.back-to-milestone
