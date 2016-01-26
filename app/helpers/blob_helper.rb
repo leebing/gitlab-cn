@@ -27,9 +27,9 @@ module BlobHelper
                                      link_opts)
 
     if !on_top_of_branch?(project, ref)
-      button_tag "Edit", class: "btn btn-default disabled has_tooltip", title: "You can only edit files when you are on a branch", data: { container: 'body' }
+      button_tag "编辑", class: "btn btn-default disabled has_tooltip", title: "你只可以在分支上编辑文件", data: { container: 'body' }
     elsif can_edit_blob?(blob, project, ref)
-      link_to "Edit", edit_path, class: 'btn'
+      link_to "编辑", edit_path, class: 'btn'
     elsif can?(current_user, :fork_project, project)
       continue_params = {
         to:     edit_path,
@@ -39,7 +39,7 @@ module BlobHelper
       fork_path = namespace_project_fork_path(project.namespace, project, namespace_key:  current_user.namespace.id,
                                                                           continue:       continue_params)
 
-      link_to "Edit", fork_path, class: 'btn', method: :post
+      link_to "编辑", fork_path, class: 'btn', method: :post
     end
   end
 
@@ -51,15 +51,15 @@ module BlobHelper
     return unless blob
 
     if !on_top_of_branch?(project, ref)
-      button_tag label, class: "btn btn-#{btn_class} disabled has_tooltip", title: "You can only #{action} files when you are on a branch", data: { container: 'body' }
+      button_tag label, class: "btn btn-#{btn_class} disabled has_tooltip", title: "你只可以在分支上#{action}文件", data: { container: 'body' }
     elsif blob.lfs_pointer?
-      button_tag label, class: "btn btn-#{btn_class} disabled has_tooltip", title: "It is not possible to #{action} files that are stored in LFS using the web interface", data: { container: 'body' }
+      button_tag label, class: "btn btn-#{btn_class} disabled has_tooltip", title: "使用网页界面无法#{action}存储在 LFS 上的文件", data: { container: 'body' }
     elsif can_edit_blob?(blob, project, ref)
       button_tag label, class: "btn btn-#{btn_class}", 'data-target' => "#modal-#{modal_type}-blob", 'data-toggle' => 'modal'
     elsif can?(current_user, :fork_project, project)
       continue_params = {
         to:     request.fullpath,
-        notice: edit_in_new_fork_notice + " Try to #{action} this file again.",
+        notice: edit_in_new_fork_notice + " 重试#{action}此文件。",
         notice_now: edit_in_new_fork_notice_now
       }
       fork_path = namespace_project_fork_path(project.namespace, project, namespace_key:  current_user.namespace.id,
@@ -74,8 +74,8 @@ module BlobHelper
       project,
       ref,
       path,
-      label:      "Replace",
-      action:     "replace",
+      label:      "替换",
+      action:     "替换",
       btn_class:  "default",
       modal_type: "upload"
     )
@@ -86,8 +86,8 @@ module BlobHelper
       project,
       ref,
       path,
-      label:      "Delete",
-      action:     "delete",
+      label:      "删除",
+      action:     "删除",
       btn_class:  "remove",
       modal_type: "remove"
     )

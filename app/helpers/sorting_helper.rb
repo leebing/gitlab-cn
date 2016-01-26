@@ -16,43 +16,43 @@ module SortingHelper
   end
 
   def sort_title_oldest_updated
-    'Oldest updated'
+    '最旧更新的'
   end
 
   def sort_title_recently_updated
-    'Last updated'
+    '最近更新的'
   end
 
   def sort_title_oldest_created
-    'Oldest created'
+    '最旧创建的'
   end
 
   def sort_title_recently_created
-    'Last created'
+    '最后创建的'
   end
 
   def sort_title_milestone_soon
-    'Milestone due soon'
+    '最近的里程碑'
   end
 
   def sort_title_milestone_later
-    'Milestone due later'
+    '最旧的里程碑'
   end
 
   def sort_title_name
-    'Name'
+    '名称'
   end
 
   def sort_title_largest_repo
-    'Largest repository'
+    '最大的仓库'
   end
 
   def sort_title_recently_signin
-    'Recent sign in'
+    '最近登录'
   end
 
   def sort_title_oldest_signin
-    'Oldest sign in'
+    '最旧登录'
   end
 
   def sort_value_oldest_updated

@@ -73,7 +73,7 @@ module SearchHelper
   def groups_autocomplete(term, limit = 5)
     Group.search(term).limit(limit).map do |group|
       {
-        label: "group: #{search_result_sanitize(group.name)}",
+        label: "群组: #{search_result_sanitize(group.name)}",
         url: group_path(group)
       }
     end
