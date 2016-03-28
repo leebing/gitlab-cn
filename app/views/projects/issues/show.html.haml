@@ -14,7 +14,7 @@
           = icon('check')
       .status-box{ class: "status-box-open #{issue_button_visibility(@issue, true)}"}
         %span.hidden-xs
-          未关闭
+          已开启
         %span.hidden-sm.hidden-md.hidden-lg
           = icon('circle-o')
 
@@ -36,7 +36,7 @@
             %strong
               = link_to_member(@project, @issue.author, size: 24, mobile_classes: "hidden-sm hidden-md hidden-lg",
                 by_username: true, avatar: false)
-        打开
+        开启
 
     .pull-right.issue-btn-group
       - if can?(current_user, :create_issue, @project)
@@ -44,7 +44,7 @@
           = icon('plus')
           新问题
       - if can?(current_user, :update_issue, @issue)
-        = link_to '重新打开问题', issue_path(@issue, issue: {state_event: :reopen}, status_only: true, format: 'json'), data: {no_turbolink: true}, class: "btn btn-nr btn-grouped btn-reopen #{issue_button_visibility(@issue, false)}", title: '重新打开问题'
+        = link_to '重新开启问题', issue_path(@issue, issue: {state_event: :reopen}, status_only: true, format: 'json'), data: {no_turbolink: true}, class: "btn btn-nr btn-grouped btn-reopen #{issue_button_visibility(@issue, false)}", title: '重新开启问题'
         = link_to '关闭问题', issue_path(@issue, issue: {state_event: :close}, status_only: true, format: 'json'), data: {no_turbolink: true}, class: "btn btn-nr btn-grouped btn-close #{issue_button_visibility(@issue, true)}", title: '关闭问题'
         = link_to edit_namespace_project_issue_path(@project.namespace, @project, @issue), class: 'btn btn-nr btn-grouped issuable-edit' do
           = icon('pencil-square-o')

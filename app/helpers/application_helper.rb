@@ -293,7 +293,7 @@ module ApplicationHelper
 
   def state_filters_text_for(entity, project)
     titles = {
-      opened: "未关闭",
+      opened: "已开启",
       closed: "已关闭",
       merged: "已合并",
       all: "所有",

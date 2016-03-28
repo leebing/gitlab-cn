@@ -68,7 +68,7 @@
             { include_blank: true }, { class: 'select2', data: { placeholder: '选择里程碑' } })
         - else
           .prepend-top-10
-          %span.light 没有可用的未关闭里程碑。
+          %span.light 没有可用的已开启里程碑。
         &nbsp;
         - if can? current_user, :admin_milestone, issuable.project
           = link_to '创建新的里程碑', new_namespace_project_milestone_path(issuable.project.namespace, issuable.project), target: :blank

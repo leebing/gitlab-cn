@@ -507,7 +507,7 @@ class MergeRequest < ActiveRecord::Base
     elsif closed?
       "已关闭"
     else
-      "未关闭"
+      "已开启"
     end
   end
 

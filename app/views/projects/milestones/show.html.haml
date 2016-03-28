@@ -10,7 +10,7 @@
     - elsif @milestone.expired?
       已过期
     - else
-      未关闭
+      已开启
   %span.identifier
     里程碑 ##{@milestone.iid}
   - if @milestone.expires_at
@@ -22,7 +22,7 @@
       - if @milestone.active?
         = link_to '关闭里程碑', namespace_project_milestone_path(@project.namespace, @project, @milestone, milestone: {state_event: :close }), method: :put, class: "btn btn-close btn-nr btn-grouped"
       - else
-        = link_to '重新打开里程碑', namespace_project_milestone_path(@project.namespace, @project, @milestone, milestone: {state_event: :activate }), method: :put, class: "btn btn-reopen btn-nr btn-grouped"
+        = link_to '重新开启里程碑', namespace_project_milestone_path(@project.namespace, @project, @milestone, milestone: {state_event: :activate }), method: :put, class: "btn btn-reopen btn-nr btn-grouped"
 
       = link_to namespace_project_milestone_path(@project.namespace, @project, @milestone), data: { confirm: '确定要继续么？' }, method: :delete, class: "btn btn-grouped btn-nr" do
         = icon('trash-o')

@@ -4,7 +4,7 @@
   - else
     - page_context_word = '问题'
   %li{class: ("active" if params[:state] == 'opened')}
-    = link_to page_filter_path(state: 'opened'), title: "只显示当前未关闭的#{page_context_word}。" do
+    = link_to page_filter_path(state: 'opened'), title: "只显示当前已开启的#{page_context_word}。" do
       #{state_filters_text_for(:opened, @project)}
 
   - if defined?(type) && type == :merge_requests

@@ -3,9 +3,9 @@
 
 .row.prepend-top-default
   .col-md-3
-    = render 'shared/milestones/issuables', args.merge(title: '正在处理的 (未关闭 & 未指派)', issuables: merge_requests.opened.unassigned, id: 'unassigned')
+    = render 'shared/milestones/issuables', args.merge(title: '正在处理的 (已开启 & 未指派)', issuables: merge_requests.opened.unassigned, id: 'unassigned')
   .col-md-3
-    = render 'shared/milestones/issuables', args.merge(title: '等待合并 (未关闭 & 已指派)', issuables: merge_requests.opened.assigned, id: 'ongoing')
+    = render 'shared/milestones/issuables', args.merge(title: '等待合并 (已开启 & 已指派)', issuables: merge_requests.opened.assigned, id: 'ongoing')
   .col-md-3
     = render 'shared/milestones/issuables', args.merge(title: '拒绝 (已关闭)', issuables: merge_requests.closed, id: 'closed')
   .col-md-3

@@ -13,7 +13,7 @@
   .block-controls.hidden-xs.hidden-sm
     - if @merge_request.present?
       .control
-        = link_to "查看未关闭的合并请求", namespace_project_merge_request_path(@project.namespace, @project, @merge_request), class: 'btn'
+        = link_to "查看已开启的合并请求", namespace_project_merge_request_path(@project.namespace, @project, @merge_request), class: 'btn'
     - elsif create_mr_button?(@repository.root_ref, @ref)
       .control
         = link_to create_mr_path(@repository.root_ref, @ref), class: 'btn btn-success' do
