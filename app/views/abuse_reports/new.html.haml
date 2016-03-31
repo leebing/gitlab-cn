@@ -1,6 +1,6 @@
 - page_title "滥用举报"
 %h3.page-title 滥用举报
-%p 请使用此表单举报创建垃圾问题和评论或其他不当使用的用户。
+%p 请使用此表单举报创建垃圾工单和评论或其他不当使用的用户。
 %hr
 = form_for @abuse_report, html: { class: 'form-horizontal js-quick-submit js-requires-input'} do |f|
   = f.hidden_field :user_id
@@ -18,7 +18,7 @@
     .col-sm-10
       = f.text_area :message, class: "form-control", rows: 2, required: true, value: sanitize(@ref_url)
       .help-block
-        详细描述该用户的问题。如果可以，请提供相关问题或评论的链接地址。
+        详细描述该用户的工单。如果可以，请提供相关工单或评论的链接地址。
 
   .form-actions
     = f.submit "发送举报", class: "btn btn-create"

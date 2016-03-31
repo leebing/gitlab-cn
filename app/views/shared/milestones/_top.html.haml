@@ -31,14 +31,14 @@
 - if milestone.complete?(current_user) && milestone.active?
   .alert.alert-success.prepend-top-default
     - close_msg = group ? '可以关闭此里程碑。' : '导航到此项目去关闭此里程碑。'
-    %span 该里程碑的全部问题都已关闭。#{close_msg}
+    %span 该里程碑的全部工单都已关闭。#{close_msg}
 
 .table-holder
   %table.table
     %thead
       %tr
         %th 项目
-        %th 未关闭问题
+        %th 未关闭工单
         %th 状态
         %th 到期日
     - milestone.milestones.each do |ms|
@@ -55,4 +55,3 @@
             未关闭
         %td
           = ms.expires_at
-

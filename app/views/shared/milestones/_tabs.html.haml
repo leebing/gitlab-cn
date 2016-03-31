@@ -1,7 +1,7 @@
 %ul.nav-links.no-top.no-bottom
   %li.active
     = link_to '#tab-issues', 'data-toggle' => 'tab', 'data-show' => '.tab-issues-buttons' do
-      问题
+      工单
       %span.badge= milestone.issues_visible_to_user(current_user).size
   %li
     = link_to '#tab-merge-requests', 'data-toggle' => 'tab', 'data-show' => '.tab-merge-requests-buttons' do

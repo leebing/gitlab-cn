@@ -60,7 +60,7 @@
             在通知邮件正文包含作者名称
           .help-block
             有些电子邮件服务器不支持重写邮件发送人名称功能。
-            开启此选项将在邮件正文中提供问题、合并请求和评论作者的名称，
+            开启此选项将在邮件正文中提供工单、合并请求和评论作者的名称，
             否则只试图重写邮件发送人为作者。
     .form-group
       = f.label :admin_notification_email, '管理员通知邮箱', class: 'control-label col-sm-2'
@@ -251,7 +251,7 @@
           = f.label :akismet_enabled do
             = f.check_box :akismet_enabled
             开启 Akismet
-          %span.help-block#akismet_help_block 用户阻止机器人创建问题
+          %span.help-block#akismet_help_block 用户阻止机器人创建工单
 
     .form-group
       = f.label :akismet_api_key, 'Akismet API Key', class: 'control-label col-sm-2'

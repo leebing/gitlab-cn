@@ -102,7 +102,7 @@
         %p
           删除账号会有以下影响：
         %ul
-          %li 全部用户内容，比如：问题、代码片段、注释将被删除
+          %li 全部用户内容，比如：工单、代码片段、注释将被删除
           - rp = current_user.personal_projects.count
           - unless rp.zero?
             %li #{pluralize rp, '个个人项目', '个个人项目'}将被删除且无法恢复

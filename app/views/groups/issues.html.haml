@@ -1,5 +1,5 @@
-- page_title "问题"
-- header_title group_title(@group, "问题", issues_group_path(@group))
+- page_title "工单"
+- header_title group_title(@group, "工单", issues_group_path(@group))
 = content_for :meta_tags do
   - if current_user
     = auto_discovery_link_tag(:atom, issues_group_url(@group, format: :atom, private_token: current_user.private_token), title: "#{@group.name} issues")
@@ -12,16 +12,16 @@
         = icon('rss')
         %span.icon-label
           订阅
-    = render 'shared/new_project_item_select', path: 'issues/new', label: "新问题"
+    = render 'shared/new_project_item_select', path: 'issues/new', label: "新工单"
 
 = render 'shared/issuable/filter', type: :issues
 
 .gray-content-block.second-block
   仅
   %strong #{@group.name}
-  群组的问题显示在此处。
+  群组的工单显示在此处。
   - if current_user
-    请到#{link_to '仪表盘', issues_dashboard_path}页面访问全部问题。
+    请到#{link_to '仪表盘', issues_dashboard_path}页面访问全部工单。
 
 .prepend-top-default
   = render 'shared/issues'

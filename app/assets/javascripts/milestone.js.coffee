@@ -15,7 +15,7 @@ class @Milestone
             $(li).find('.assignee-icon').html('')
           $(li).effect 'highlight'
         else
-          new Flash("更新问题失败", 'alert')
+          new Flash("更新工单失败", 'alert')
       dataType: "json"
 
   @sortIssues: (data) ->
@@ -27,7 +27,7 @@ class @Milestone
       data: data
       success: (data) ->
         if data.saved != true
-          new Flash("更新问题失败", 'alert')
+          new Flash("更新工单失败", 'alert')
       dataType: "json"
 
   @sortMergeRequests: (data) ->
@@ -58,7 +58,7 @@ class @Milestone
             $(li).find('.assignee-icon').html('')
           $(li).effect 'highlight'
         else
-          new Flash("更新问题失败", 'alert')
+          new Flash("更新工单失败", 'alert')
       dataType: "json"
 
   constructor: ->

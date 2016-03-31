@@ -178,7 +178,7 @@
           - if @user.can_be_removed?
             %p 删除用户有如下效果：
             %ul
-              %li 全部用户内容，比如：问题、代码片段、注释都将被删除
+              %li 全部用户内容，比如：工单、代码片段、注释都将被删除
               - rp = @user.personal_projects.count
               - unless rp.zero?
                 %li #{pluralize rp, '个个人项目', '个个人项目'}将被删除并无法恢复

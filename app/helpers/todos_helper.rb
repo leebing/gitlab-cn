@@ -83,7 +83,7 @@ module TodosHelper
   def todo_types_options
     types = [
       OpenStruct.new(title: '任何类型', name: ''),
-      OpenStruct.new(title: '问题', name: 'Issue'),
+      OpenStruct.new(title: '工单', name: 'Issue'),
       OpenStruct.new(title: '合并请求', name: 'MergeRequest')
     ]
 

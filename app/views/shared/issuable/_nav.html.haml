@@ -2,7 +2,7 @@
   - if defined?(type) && type == :merge_requests
     - page_context_word = '合并请求'
   - else
-    - page_context_word = '问题'
+    - page_context_word = '工单'
   %li{class: ("active" if params[:state] == 'opened')}
     = link_to page_filter_path(state: 'opened'), title: "只显示当前未关闭的#{page_context_word}。" do
       #{state_filters_text_for(:opened, @project)}
@@ -17,7 +17,7 @@
         #{state_filters_text_for(:closed, @project)}
   - else
     %li{class: ("active" if params[:state] == 'closed')}
-      = link_to page_filter_path(state: 'closed'), title: '只显示当前已关闭的问题。' do
+      = link_to page_filter_path(state: 'closed'), title: '只显示当前已关闭的工单。' do
         #{state_filters_text_for(:closed, @project)}
 
   %li{class: ("active" if params[:state] == 'all')}

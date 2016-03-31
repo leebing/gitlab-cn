@@ -57,7 +57,7 @@ module SearchHelper
         { label: "#{prefix} - 提交",        url: namespace_project_commits_path(@project.namespace, @project, ref) },
         { label: "#{prefix} - 网络",        url: namespace_project_network_path(@project.namespace, @project, ref) },
         { label: "#{prefix} - 图表",        url: namespace_project_graph_path(@project.namespace, @project, ref) },
-        { label: "#{prefix} - 问题",        url: namespace_project_issues_path(@project.namespace, @project) },
+        { label: "#{prefix} - 工单",        url: namespace_project_issues_path(@project.namespace, @project) },
         { label: "#{prefix} - 合并请求",    url: namespace_project_merge_requests_path(@project.namespace, @project) },
         { label: "#{prefix} - 里程碑",      url: namespace_project_milestones_path(@project.namespace, @project) },
         { label: "#{prefix} - 代码脚本",    url: namespace_project_snippets_path(@project.namespace, @project) },

@@ -128,7 +128,7 @@ class Issue < ActiveRecord::Base
   end
 
   def zh_name
-    '问题'
+    '工单'
   end
 
   # From all notes on this issue, we'll select the system notes about linked

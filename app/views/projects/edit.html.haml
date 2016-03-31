@@ -44,9 +44,9 @@
                 .checkbox
                   = f.label :issues_enabled do
                     = f.check_box :issues_enabled
-                    %strong 问题
+                    %strong 工单
                     %br
-                    %span.descr 轻量级问题跟踪系统
+                    %span.descr 轻量级工单跟踪系统
 
             .form-group
               .col-sm-offset-2.col-sm-10
@@ -236,7 +236,7 @@
           .panel-body
             = form_tag(namespace_project_path(@project.namespace, @project), method: :delete, class: 'form-horizontal') do
               %p
-                删除项目将删除其版本仓库及所有相关资源，包括问题，合并请求等。
+                删除项目将删除其版本仓库及所有相关资源，包括工单，合并请求等。
                 %br
                 %strong 删除项目无法恢复！
               .form-actions

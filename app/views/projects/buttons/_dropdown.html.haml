@@ -7,7 +7,7 @@
         %li
           = link_to url_for_new_issue(@project, only_path: true) do
             = icon('exclamation-circle fw')
-            新问题
+            新工单
       - merge_project = can?(current_user, :create_merge_request, @project) ? @project : (current_user && current_user.fork_of(@project))
       - if merge_project
         %li
